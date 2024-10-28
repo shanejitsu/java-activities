@@ -10,79 +10,16 @@ public class Cuizon_Exercise2 {
 				"Five gold rings", "Six geese a-laying", "Seven swans a-swimming", "Eight maids a-milking",
 				"Nine ladies dancing", "Ten lords a-leaping", "Eleven pipers piping", "Twelve drummers drumming" };
 
-		String day = null, gift = null;
-
-		for (int i = 11; i >= 0; i--) {
+		for (int i = 0; i < 12; i++) {
 			System.out.print("On the ");
-
-			switch (i + 1) {
-			case 1:
-				System.out.print(days[i]);
-				break;
-			case 2:
-				System.out.print(days[i]);
-				break;
-			case 3:
-				System.out.print(days[i]);
-				break;
-			case 4:
-				System.out.print(days[i]);
-				break;
-			case 5:
-				System.out.print(days[i]);
-				break;
-			case 6:
-				System.out.print(days[i]);
-				break;
-			case 7:
-				System.out.print(days[i]);
-				break;
-			case 8:
-				System.out.print(days[i]);
-				break;
-			case 9:
-				System.out.print(days[i]);
-				break;
-			case 10:
-				System.out.print(days[i]);
-				break;
-			case 11:
-				System.out.print(days[i]);
-				break;
-			case 12:
-				System.out.print(days[i]);
-				break;
-			}
+			System.out.print(days[i]);
 
 			System.out.println(" day of Christmas my true love sent to me");
-
-			switch (i + 1) {
-			case 1:
-				gift = gifts[i];
-			case 2:
-				gift = gifts[i];
-			case 3:
-				gift = gifts[i];
-			case 4:
-				gift = gifts[i];
-			case 5:
-				gift = gifts[i];
-			case 6:
-				gift = gifts[i];
-			case 7:
-				gift = gifts[i];
-			case 8:
-				gift = gifts[i];
-			case 9:
-				gift = gifts[i];
-			case 10:
-				gift = gifts[i];
-			case 11:
-				gift = gifts[i];
-			case 12:
-				gift = gifts[i];
+			
+			for(int j=i;j>=0;j--) {
+				System.out.println(gifts[j]);
 			}
-			System.out.println(gift + "\n");
+			System.out.println("\n");
 		}
 	}
 }

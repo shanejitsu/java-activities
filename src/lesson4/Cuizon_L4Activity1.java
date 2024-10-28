@@ -5,41 +5,34 @@ import java.util.Scanner;
 public class Cuizon_L4Activity1 {
 	// create print function para chada
 	private static int getContact(String[] list, String contact) {
-		for (int i = 0; i < list.length; i++) {
-			if(list[0]==null) {
-				return -1;
-			}
-			if (list[i].toLowerCase().contentEquals(contact)) {
-				return i;
+		if(list[0]==null) {
+			return -1;
+		}else {
+			for (int i = 0; i < list.length; i++) {
+				if (list[i].toLowerCase().contentEquals(contact)) {
+					return i;
+				}
 			}
 		}
 		return -1;
 	}
 
 	private static void getContactNames(String[] name) {
-		System.out.println("Contact List:");
-		for (int i = 0; i < name.length; i++) {
-			if (name[0] == null) {
-				System.out.println("Message: You currently do not have any contacts.\n");
-				break;
+		if (name[0] == null) {
+			System.out.println("Message: You currently do not have any contacts.\n");
+		}else {
+			System.out.println("Contact List:");
+			for (int i = 0; i < name.length; i++) {
+				
+				if (name[i] == null) {
+					break;
+				}
+				System.out.println("\t[" + (i+1) + "]\t" + name[i]);
 			}
-			if (name[i] == null) {
-				break;
-			}
-			System.out.println("\t[" + i + "]\t" + name[i]);
+			System.out.println("\n");
 		}
-		System.out.println("\n");
 	}
 
-	private static void print(String[] name, String[] phoneNumber) {
-		for (int i = 0; i < name.length; i++) {
-			if (name[i] == null && phoneNumber[i] == null) {
-				break;
-			}
-			System.out.println(name[i]);
-			System.out.println(phoneNumber[i]);
-		}
-	}
 
 	public static void main(String[] args) {
 		int ARRAY_LENGTH = 5;
@@ -49,6 +42,7 @@ public class Cuizon_L4Activity1 {
 		String input;
 		int current = 0;
 		Scanner s = new Scanner(System.in);
+		
 		do {
 			System.out.println(
 					"[A] - Add contact\n" + "[S] - Search Contact\n" + "[L] - Show Contact List\n" + "[E] - Exit\n");
@@ -81,8 +75,10 @@ public class Cuizon_L4Activity1 {
 				} else {
 					System.out.println("There is no contact with this name.\n");
 				}
+				break;
 			case "l":
 				getContactNames(name);
+				break;
 			case "e":
 				break;
 			default:
