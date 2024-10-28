@@ -5,18 +5,18 @@ public class Person {
 	private String status;
 	private int age;
 	
-	public Person() {
-		
-	}
-	public Person(String name,int age) {
-		setName(name);
-		setAge(age);
-	}
-	public Person(String name,int age,String status) {
-		setName(name);
-		setAge(age);
-		setStatus(status);
-	}
+//	public Person() {
+//		
+//	}
+//	public Person(String name,int age) {
+//		setName(name);
+//		setAge(age);
+//	}
+//	public Person(String name,int age,String status) {
+//		setName(name);
+//		setAge(age);
+//		setStatus(status);
+//	}
 
 	public String getName() {
 		return name;
@@ -36,10 +36,15 @@ public class Person {
 	public void setAge(int age) {
 		this.age = age;
 	}
+	
+	
 	@Override
 	public String toString() {
 		return "Person [name=" + name + ", status=" + status + ", age=" + age + "]\n";
 	}
 	
+	public void displayScream(Employee e) {
+		System.out.println("Employee says " + e.scream());
+	}
 
 }
