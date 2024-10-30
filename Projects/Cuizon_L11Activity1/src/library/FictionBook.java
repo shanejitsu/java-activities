@@ -1,24 +1,28 @@
-package polymorphism;
+package library;
 
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
-//L10
-public class NonFictionBook extends Book{
-	private final int FINE_PER_DAY = 5;
-	private final int MAX_ALLOWABLE_DAY = 14;
-	
-	public NonFictionBook(String title, String author, int yearPublished) {
-		super( title, author,yearPublished);
+
+public class FictionBook extends Book {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	private final int FINE_PER_DAY = 10;
+	private final int MAX_ALLOWABLE_DAY = 21;
+
+	public FictionBook(String title, String author, int yearPublished) {
+		super(title, author, yearPublished);
 	}
-	
+
 	public int getFine() {
 		return FINE_PER_DAY;
 	}
-	
+
 	public int getMaxDays() {
 		return MAX_ALLOWABLE_DAY;
 	}
-	
+
 	public void rent() {
 	    super.rent();
 	    super.dueDate = LocalDate.now().plusDays(getMaxDays());
@@ -31,7 +35,7 @@ public class NonFictionBook extends Book{
 
 	public double calculateFine() {
 	    return super.getReturnDate() != null && super.getReturnDate().isAfter(super.dueDate)
-	            ? getFine() * ChronoUnit.DAYS.between(super.dueDate, super.getReturnDate())
+	            ? getFine() * (ChronoUnit.DAYS.between(super.dueDate, super.getReturnDate()))
 	            : 0;
 	}
 	

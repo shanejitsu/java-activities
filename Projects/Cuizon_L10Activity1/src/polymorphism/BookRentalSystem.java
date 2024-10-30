@@ -1,5 +1,5 @@
 package polymorphism;
-
+//L10
 public class BookRentalSystem {
 	static Book[] books= {
 			new FictionBook("The Lord of the Rings","J.R.R. Tolkien",1954),
@@ -19,8 +19,7 @@ public class BookRentalSystem {
 		System.out.println("\n* * * * * * * * * BOOKS RENTED , NEVER READ * * * * * * * * *");
 		for(Book book:books){
 			if(book.getRented()==true) {
-				if(((FictionBook)book).equals(book))
-					System.out.println(book.toString());
+					System.out.println(book.toString()+book.displayDates()+"\t\tFine: "+ book.calculateFine());
 			}
 		}
 	}

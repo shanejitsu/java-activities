@@ -1,9 +1,13 @@
-package polymorphism;
+package library;
 
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
-//L10
+
 public class NonFictionBook extends Book{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private final int FINE_PER_DAY = 5;
 	private final int MAX_ALLOWABLE_DAY = 14;
 	
@@ -39,3 +43,4 @@ public class NonFictionBook extends Book{
 		return "\tDue date: "+ getDueDate()+"\tReturn date: " + super.getReturnDate();
 	}
 }
+

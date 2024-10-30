@@ -1,9 +1,11 @@
-package polymorphism;
+package library;
 
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
-//L10
-public class Book {
+
+public class Book implements java.io.Serializable{
+	
+	private static final long serialVersionUID = 1L;
 	private String title;
 	private String author;
 	private int yearPublished;
@@ -40,6 +42,9 @@ public class Book {
 	public void setDueDate(LocalDate dueDate) {
 		this.dueDate = dueDate;
 	}
+	public LocalDate getDueDate() {
+		return dueDate;
+	}
 
 	public double calculateFine() {
 		return getReturnDate().isAfter(dueDate)
@@ -50,6 +55,7 @@ public class Book {
 	public String displayDates() {
 		return "\tDue date: " + dueDate + "\tReturn date: " + getReturnDate();
 	}
+	
 
 	@Override
 	public String toString() {

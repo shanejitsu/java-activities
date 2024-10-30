@@ -2,7 +2,7 @@ package polymorphism;
 
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
-
+//L10
 public class FictionBook extends Book {
 	private final int FINE_PER_DAY = 10;
 	private final int MAX_ALLOWABLE_DAY = 21;
@@ -19,18 +19,23 @@ public class FictionBook extends Book {
 		return MAX_ALLOWABLE_DAY;
 	}
 
+	public void rent() {
+	    super.rent();
+	    super.dueDate = LocalDate.now().plusDays(getMaxDays());
+	}
+	
 	public LocalDate getDueDate() {
 		super.dueDate = LocalDate.now().plusDays(MAX_ALLOWABLE_DAY);
 		return super.dueDate;
 	}
 
-	public double calcuateFine() {
-		return super.getReturnDate().isAfter(getDueDate())
-				? ChronoUnit.DAYS.between(super.getReturnDate(), getDueDate())
-				: 0;
+	public double calculateFine() {
+	    return super.getReturnDate() != null && super.getReturnDate().isAfter(super.dueDate)
+	            ? getFine() * (ChronoUnit.DAYS.between(super.dueDate, super.getReturnDate()))
+	            : 0;
 	}
 	
 	public String displayDates() {
-		return "Due date: "+ getDueDate()+"\tReturn date: " + super.getReturnDate();
+		return "\tDue date: "+ getDueDate()+"\tReturn date: " + super.getReturnDate();
 	}
 }
