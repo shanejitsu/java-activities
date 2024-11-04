@@ -8,7 +8,7 @@ public class Triangle {
 		sides = s;
 		base = b;
 	}
-
+	
 	public double getSides() {
 		return sides;
 	}
