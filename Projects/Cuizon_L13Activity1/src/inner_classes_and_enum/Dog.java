@@ -8,6 +8,13 @@ public class Dog {
 
 		public String size;
 
+		/*
+		 * This is a constructor of class Size. Initializes the dogSize field the
+		 * parameter value.
+		 * 
+		 * @param size 
+		 * @return Returns nothing.
+		 */
 		Size(String size) {
 			this.size = size;
 		}
@@ -19,11 +26,9 @@ public class Dog {
 	}
 
 	/*
-	 * 
 	 * Displays the appropriate dog size of Dog.
 	 * 
 	 * @return Returns nothing.
-	 * 
 	 */
 	public void selectDogSize() {
 		System.out.print("I am ");
