@@ -8,9 +8,18 @@ public abstract class DnDCharacter {
 	public abstract void attack(DnDCharacter opponent);
 
 	public abstract void receiveDamage(int damage);
-
-	public DnDCharacter(String characterName) {
+	
+	/*
+	 * This is the DnDCharacter constructor.
+	 * Initializes the DnDCharacter's characterName, health, and damage.
+	 * 
+	 * @param characterName, health, damage
+	 * @return Returns true if the character's health is greater than 0.
+	 */
+	public DnDCharacter(String characterName, int health, int damage) {
 		this.characterName = characterName;
+		this.health = health;
+		this.damage = damage;
 	}
 
 	/*

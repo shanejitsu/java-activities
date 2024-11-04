@@ -1,16 +1,21 @@
 package abstract_and_interface;
 
 public class Catalyst extends DnDCharacter {
-
+	/*
+	 * This is the Catalyst class constructor.
+	 * Initializes the character name with the parameter value.
+	 * 
+	 * @param characterName 
+	 * @return Returns nothing.
+	 */
 	public Catalyst(String characterName) {
-		super(characterName);
-		super.health = 100;
-		super.damage = 15;
+		super(characterName,100,15);
 	}
 
 	/*
 	 * Calls the receiveDamage function of the opponent
 	 * 
+	 * @param opponent
 	 * @return Returns nothing.
 	 */
 	@Override
