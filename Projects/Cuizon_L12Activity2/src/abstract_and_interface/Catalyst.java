@@ -1,11 +1,15 @@
 package abstract_and_interface;
 
 public class Catalyst extends DnDCharacter {
-
+	/*
+	 * This is the Catalyst class constructor.
+	 * Initializes the character name with the parameter value.
+	 * 
+	 * @param characterName 
+	 * @return Returns nothing.
+	 */
 	public Catalyst(String characterName) {
-		super(characterName);
-		super.health = 100;
-		super.damage = 15;
+		super(characterName,100,15);
 	}
 
 	/*
@@ -30,12 +34,24 @@ public class Catalyst extends DnDCharacter {
 
 	}
 
+	/*
+	 * Restores the health of the character by parameter restore value.
+	 * 
+	 * @param restore
+	 * @return Returns nothing.
+	 */
 	@Override
 	public void restoreHealth(int restore) {
 		super.health += restore;
 		System.out.println("\nRestore Health -> " + super.characterName + " health: " + super.health);
 	}
 
+	/*
+	 * Buffs the character by inreasing the character's health by parameter buff value.
+	 * 
+	 * @param restore 
+	 * @return Returns nothing.
+	 */
 	@Override
 	public void buffAbility(int buff) {
 		super.health += buff;
