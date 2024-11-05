@@ -15,7 +15,7 @@ public class Hangman extends Game implements Playable {
 	 * @param secretWord  The word to be guessed in the game.
 	 */
 	public Hangman(String secretWord) {
-		super(secretWord); // Call the Game class constructor with the word as the game name
+		super("Hangman"); // Call the Game class constructor with the word as the game name
 		this.secretWord = secretWord.toUpperCase();
 		currentGuess = new StringBuilder(); // Initialize the current guess as an empty string
 
@@ -37,7 +37,7 @@ public class Hangman extends Game implements Playable {
 	 */
 	@Override
 	public void start() {
-		System.out.println("Welcome to Hangman!");
+		System.out.println("Welcome to "+getName() + "!");
 		while(attemptsLeft > 0 && currentGuess.toString().contains("_")) {
 			play();
 			if(attemptsLeft > 0) {
