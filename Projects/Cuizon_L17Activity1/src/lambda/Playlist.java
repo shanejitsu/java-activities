@@ -100,7 +100,18 @@ public class Playlist {
 		}
 	}
 
+	/**
+	 * displays the list of songs by the given parameter artist
+	 * 
+	 * @param holds the value String
+	 * @return void
+	 */
 	public void searchArtist(String artist) {
-		playlist.stream().filter(song -> song.artist.contentEquals(artist)).forEach(System.out::println);
+			playlist.stream().filter(song -> song.artist.toLowerCase().contentEquals(artist.toLowerCase()))
+				.forEach(System.out::println);
+	}
+	
+	public boolean isEmpty() {
+		return playlist.isEmpty();
 	}
 }

@@ -14,6 +14,8 @@ public class Main {
 		System.out.println("Welcome to Spotify!");
 		String title;
 		playlist.addSong("Red", "Taylor Swift");
+		playlist.addSong("Red1", "TAYLOR SWIFT");
+		playlist.addSong("Red2", "Taylor Swift");
 		playlist.addSong("Photograph", "Ed");
 		playlist.addSong("Fireworks", "Katy Perry");
 		playlist.addSong("Rolling in the Deep", "Adele");
@@ -46,9 +48,13 @@ public class Main {
 						playlist.displayNextSong();
 						break;
 					case 5:
-						System.out.print("Search for artist: ");
-						String artist1 = scn.nextLine();
-						playlist.searchArtist(artist1);
+						if(playlist.isEmpty()) {
+							System.out.println("Your playlist is empty.");
+						}else {
+							System.out.print("Search for artist: ");
+							String artist1 = scn.nextLine();
+							playlist.searchArtist(artist1);
+						}
 						break;
 					case 6:
 						System.out.println("Exiting playlist.");
