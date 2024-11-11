@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-public class WeatherRecorder {
+public class WeatherRecorder{
 	static Scanner scn = new Scanner(System.in);
 	HashMap<String, HashMap<String, Double>> weatherMap;
 
@@ -105,7 +105,6 @@ public class WeatherRecorder {
 						isValid = true;
 						scn.nextLine();
 						HashMap<String, Double> weatherTemp = new HashMap<>();
-						;
 						weatherTemp.put(weather, temperature);
 						weatherMap.put(days[i].name(), weatherTemp);
 					} catch (InputMismatchException e) {
