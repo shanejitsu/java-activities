@@ -1,0 +1,41 @@
+1. Complete the following tasks, assuming that each applies to the same program:
+	a. Declare a task where its class is a subclass of Thread.
+		class Threadable extends Thread {
+    		@Override
+    		public void run() {}
+		}
+		Threadable t = new Threadable();
+	b. Create an instance of the thread class and start it.
+		Threadable t = new Threadable();
+        	t.start();
+
+		Thread t1 = new Thread(t);
+		t1.start();
+	c. Declare a task that implements the Runnable interface.
+		class Runner implements Runnable {
+    			@Override
+    			public void run() {
+    			}
+		}
+		
+	d. Create an instance of the task and pass it to a thread to execute.
+		Thread t2 = new Thread(new Runner);
+
+	e. Implement a function to wait a thread to finish.
+		synchronized void waitThread() {
+			System.out.println("Thread starting");
+
+			try {
+				Thread.sleep(1000);
+			} catch (InterruptedException e) {
+				System.out.println(e);
+			}
+
+			System.out.println("Thread finished");
+		}
+	f. Create a synchronized block using the instance object variable lock.
+    		public void run() {
+       		synchronized (lock) {}
+    		}
+	g. Implement a statement to pause execution for 1 seconds.
+		Thread.sleep(1000);
